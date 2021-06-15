@@ -1,6 +1,10 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:path/path.dart';
+import 'package:receita_crud/app/database/script.dart';
+import 'package:receita_crud/app/database/sqlite/connection.dart';
+import 'package:sqflite/sqflite.dart';
 
 class Cadastro extends StatelessWidget{
   const Cadastro({ Key? key }) : super(key: key);
@@ -69,6 +73,27 @@ class Cadastro extends StatelessWidget{
 
     );
 
+  }
+
+  Future<List<Map<String,dynamic>>> _buscar() async{
+
+    Database db = await Connection.get();
+    /*String path = join( await getDatabasesPath(), 'banco');
+    Database db = await openDatabase(
+
+      path, 
+      version: 1, 
+
+      onCreate: (db, v){
+        db.execute(createTable);
+        db.execute(insertUsuario);
+        db.execute(insertReceita);
+        db.execute(insertIngrediente);
+      }
+
+      );*/
+
+      return db.query('usuario');
   }
   
 }

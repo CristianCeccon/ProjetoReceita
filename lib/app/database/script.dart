@@ -1,6 +1,6 @@
 
 
-final creaTable= '''
+final createTable= '''
 
   CREATE TABLE usuario(
 
