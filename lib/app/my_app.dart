@@ -5,6 +5,8 @@ import 'package:receita_crud/app/view/confirmacao.dart';
 import 'view/my_home_page.dart';
 
 class MyApp extends StatelessWidget {
+  // ignore: non_constant_identifier_names
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {

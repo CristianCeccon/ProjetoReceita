@@ -4,10 +4,16 @@ import 'package:flutter/material.dart';
 import 'package:path/path.dart';
 import 'package:receita_crud/app/database/script.dart';
 import 'package:receita_crud/app/database/sqlite/connection.dart';
+import 'package:receita_crud/app/database/sqlite/dao/receita_dao_impl.dart';
+import 'package:receita_crud/app/domain/entities/receitas.dart';
 import 'package:sqflite/sqflite.dart';
 
 class Cadastro extends StatelessWidget{
   const Cadastro({ Key? key }) : super(key: key);
+
+  Future<List<Receita>>_buscar() async{
+    return ReceitaDAOImpl().find();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -75,9 +81,11 @@ class Cadastro extends StatelessWidget{
 
   }
 
+  // ignore: unused_element
   Future<List<Map<String,dynamic>>> _buscar() async{
 
-    Database db = await Connection.get();
+    Database? db = await Connection.get();
+    
     /*String path = join( await getDatabasesPath(), 'banco');
     Database db = await openDatabase(
 
@@ -93,7 +101,7 @@ class Cadastro extends StatelessWidget{
 
       );*/
 
-      return db.query('usuario');
+      return db!.query('usuario');
   }
   
 }

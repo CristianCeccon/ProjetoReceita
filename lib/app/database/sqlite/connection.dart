@@ -4,12 +4,12 @@ import 'package:path/path.dart';
 import 'package:receita_crud/app/database/script.dart';
 import 'package:sqflite/sqflite.dart';
 
-class Connection{
+class Connection{ 
 
   // ignore: unused_field
-  static Database _db;
+  static Database? _db;
 
-  static Future<Database> get()async{
+  static Future<Database?> get()async{
 
     if(_db == null){
 
@@ -25,7 +25,6 @@ class Connection{
           db.execute(insertIngrediente);
         },
       );
-        
 
     }
 
