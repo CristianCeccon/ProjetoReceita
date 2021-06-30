@@ -1,0 +1,17 @@
+
+
+Injeção de dependência:
+----------------------------------------------------------------------------------------------------------------------------------------------
+Injeção de Dependências é um tipo de Inversão de Controle e significa que uma classe não mais é responsável por criar ou buscar os objetos dos
+quais depende. Isso serve para desacoplar as classes, evitando dependência direta entre elas. ou seja o padrão de injeção de dependências visa
+remover dependências desnecessárias entre as classes onde é colocado a responsabilidade das classes externas na classe que está chamando e não
+na classe chamada
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Camada de dominio:
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+A camada de domínio modela os negócios do seu aplicativo ela tem qjue ser sua interpretação clara de suas regras, sua dinâmica de componentes 
+e contém seu estado a qualquer momento.
+----------------------------------------------------------------------------------------------------------------------------------------------
