@@ -8,6 +8,7 @@ import 'package:receita_crud/app/domain/interfaces/ingrediente_dao.dart';
 import 'package:receita_crud/app/domain/interfaces/receita_dao.dart';
 import 'package:receita_crud/app/domain/interfaces/tags_dao.dart';
 import 'package:receita_crud/app/domain/interfaces/usuario_dao.dart';
+import 'package:receita_crud/app/domain/services/receitaService.dart';
 
 setupinjection(){
 
@@ -15,11 +16,15 @@ setupinjection(){
 
   getIt.registerSingleton<ReceitaDAO>(ReceitaDAOImpl());
 
+  getIt.registerSingleton<ReceitaService>(ReceitaService());
+
   getIt.registerSingleton<UsuarioDAO>(UsuarioDAOImpl());
 
   getIt.registerSingleton<TagsDAO>(TagsDAOImpl());
 
   getIt.registerSingleton<IngredienteDAO>(IngredienteDAOImpl());
+
+  
 
 }
 

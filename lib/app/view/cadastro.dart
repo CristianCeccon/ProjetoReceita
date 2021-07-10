@@ -82,9 +82,9 @@ class Cadastro extends StatelessWidget{
   }
 
   // ignore: unused_element
-  Future<List<Map<String,dynamic>>> _buscar() async{
+  //Future<List<Map<String,dynamic>>> _buscar() async{
 
-    Database? db = await Connection.get();
+    //Database? db = await Connection.get();
     
     /*String path = join( await getDatabasesPath(), 'banco');
     Database db = await openDatabase(
@@ -101,8 +101,8 @@ class Cadastro extends StatelessWidget{
 
       );*/
 
-      return db!.query('usuario');
-  }
+      //return db!.query('usuario');
+  //}
   
 }
 

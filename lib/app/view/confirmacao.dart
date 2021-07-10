@@ -25,8 +25,6 @@ class _ConfirmacaoState extends State<Confirmacao> {
 
 
 
-
-
             
             ////////////////////////////////////////////////////
             
@@ -34,8 +32,6 @@ class _ConfirmacaoState extends State<Confirmacao> {
 
             ////////////////////////////////////////////////////
             
-
-
 
 
 

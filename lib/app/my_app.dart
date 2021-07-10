@@ -5,11 +5,16 @@ import 'package:receita_crud/app/view/confirmacao.dart';
 import 'view/my_home_page.dart';
 
 class MyApp extends StatelessWidget {
+  static const HOME = '/';
+  static const CADASTRO = 'Cadastro';
+  static const CONFIRMACAO = 'Confirmacao';
   // ignore: non_constant_identifier_names
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+
+    
     return MaterialApp(
       title: 'Receitas',
       theme: ThemeData(
@@ -29,11 +34,10 @@ class MyApp extends StatelessWidget {
 
       ),
       routes: {
-        "/": (context) => MyHomePage(),
-        "Cadastro": (context) => Cadastro(),
-        "Confirmacao": (context) => Confirmacao()
-
-        },
+        HOME:(context) => MyHomePage(),
+        CADASTRO:(context) => Cadastro(),
+        CONFIRMACAO:(context) => Confirmacao(),
+      },
     );
   }
 }
