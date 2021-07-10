@@ -10,7 +10,7 @@ part of 'receita_list_back.dart';
 
 mixin _$CadastroListBack on _CadastroListBack, Store {
   @override
-  String toString() {
+  String toString() { vida
     return '''
 
     ''';
