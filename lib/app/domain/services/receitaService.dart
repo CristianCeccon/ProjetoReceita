@@ -12,8 +12,8 @@ class ReceitaService{
   save(Receita receitas){
 
     //validacao
-    validateName(receitas.nome);
-    validadeDescrissao(receitas.descrissao);
+    validateName(receitas.nome!);
+    validadeDescrissao(receitas.descrissao!);
 
     _dao.save(receitas);
   }

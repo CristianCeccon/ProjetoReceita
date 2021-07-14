@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'receita_list_back.dart';
+part of 'receita_form_back.dart';
 
 // **************************************************************************
 // StoreGenerator
@@ -8,12 +8,11 @@ part of 'receita_list_back.dart';
 
 // ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
 
-mixin _$CadastroListBack on _CadastroListBack, Store {
+mixin _$ReceitaFormBack on _ReceitaFormBack, Store {
   @override
-  String toString() { vida
+  String toString() {
     return '''
 
     ''';
   }
 }
-oi

@@ -32,13 +32,13 @@ class Cadastro extends StatelessWidget{
           
           children: [
 
-            TextField(
+            /*TextField(
 
               decoration: InputDecoration(
                 labelText: "Digite o nome do prato:" 
               ),
 
-            ),
+           ),*
 
             TextField(
 
@@ -70,7 +70,7 @@ class Cadastro extends StatelessWidget{
                 labelText: "Descrissao:" 
               ),
               
-            ),
+            ),*/
 
             TextButton(onPressed: () { Navigator.of(context).pushNamed("Confirmacao"); }, child: Text("Confirmar Cadastro"))
 

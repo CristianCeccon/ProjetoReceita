@@ -7,6 +7,7 @@ import 'package:receita_crud/app/domain/services/receitaService.dart';
 import 'package:receita_crud/app/my_app.dart';
 import 'package:receita_crud/app/view/cadastro.dart';
 
+//flutter packages pub run build_runner watch
 
 part'receita_list_back.g.dart';
 
