@@ -2,9 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:receita_crud/app/view/receita_form_back.dart';
 
 class ReceitaForm extends StatelessWidget {
+  final _form = GlobalKey<FormState>();
   
   Widget campoName(ReceitaFormBack back){
     return TextFormField(
+      validator: back.validadeNome,
+      onSaved: (newValue) => back.receita!.nome = newValue,
       initialValue: back.receita?.nome,
       decoration: InputDecoration(
         labelText: 'Nome',
@@ -25,6 +28,8 @@ class ReceitaForm extends StatelessWidget {
 
   Widget campoDescrissao(ReceitaFormBack back){
     return TextFormField(
+      validator: back.validadeDescrissao,
+      onSaved: (newValue) => back.receita!.descrissao = newValue,
       initialValue: back.receita?.descrissao,
       decoration: InputDecoration(
         labelText: 'Descrissao',
@@ -52,7 +57,16 @@ class ReceitaForm extends StatelessWidget {
 
         actions: [
 
-          IconButton(onPressed: null, icon:(Icon(Icons.save)))
+          IconButton(
+            onPressed: (){
+              _form.currentState!.validate();
+              _form.currentState!.save();
+              if(_back.isValid){
+                _back.save();
+                Navigator.of(context).pop();
+              }
+            }, 
+            icon:(Icon(Icons.save)))
 
         ],
 
@@ -62,6 +76,8 @@ class ReceitaForm extends StatelessWidget {
         padding: EdgeInsets.all(10),
 
         child: Form(
+
+          key: _form,
 
           child: Column(
 
