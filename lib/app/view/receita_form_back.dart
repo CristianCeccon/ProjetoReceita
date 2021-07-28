@@ -4,25 +4,22 @@ import 'package:mobx/mobx.dart';
 import 'package:receita_crud/app/domain/entities/receitas.dart';
 import 'package:receita_crud/app/domain/services/receitaService.dart';
 
-part 'receita_form_back.g.dart';
 
-class ReceitaFormBack = _ReceitaFormBack with _$ReceitaFormBack;
-
-abstract class _ReceitaFormBack with Store{
+class ReceitaFormBack{
 
   Receita? receita;
 
   var _service = GetIt.I.get<ReceitaService>();
 
-  bool _nomeIsValid;
-  bool _descricaoIsValid;
+  bool _nomeIsValid = false;
+  bool _descricaoIsValid = false;
 
   @action
   bool get isValid => _nomeIsValid && _descricaoIsValid;
   
 
   //diferenciar o novo da alteracao
-  _ReceitaFormBack(BuildContext context){
+  ReceitaFormBack(BuildContext context){
 
     var parameter = ModalRoute.of(context)?.settings.arguments;
 
@@ -42,9 +39,9 @@ abstract class _ReceitaFormBack with Store{
 
 
   //validacoes
-  String? validadeNome(String name){
+  String? validadeNome(String? name){
     try{
-      _service.validateName((name));
+      _service.validateName((name!));
       _nomeIsValid = true;
 
       return null;
@@ -57,9 +54,9 @@ abstract class _ReceitaFormBack with Store{
 
   }
 
-  String? validadeDescrissao(String descrissao){
+  String? validadeDescrissao(String? descrissao){
     try{
-      _service.validadeDescrissao((descrissao));
+      _service.validadeDescrissao((descrissao!));
       _descricaoIsValid = true;
 
       return null;

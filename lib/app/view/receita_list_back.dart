@@ -34,8 +34,12 @@ abstract class _ReceitaListBack with Store{
   }
 
   //metodo para chamar o form
-  goToForm(BuildContext context){
-    Navigator.of(context).pushNamed(MyApp.CADASTRO);
+  goToForm(BuildContext context, Receita receita){
+    Navigator.of(context).pushNamed(MyApp.FORMULARIO_RECEITA);
+  }
+
+  goToDetails(BuildContext context, Receita receita){
+    Navigator.of(context).pushNamed(MyApp.DETALHES_RECEITA, arguments: receita);
   }
 
   //goToForm(BuildContext context,[Receita receita]){

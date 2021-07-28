@@ -17,7 +17,8 @@ class ReceitaDAOImpl implements ReceitaDAO{
 
         id: linha['id_receita'], 
         nome: linha['nome'], 
-        descrissao: linha['descrissao']
+        descrissao: linha['descrissao'],
+        urlImagem: linha['urlImagem']
 
       );
 

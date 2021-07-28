@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:receita_crud/app/view/cadastro.dart';
 import 'package:receita_crud/app/view/confirmacao.dart';
+import 'package:receita_crud/app/view/receita_details.dart';
+import 'package:receita_crud/app/view/receita_form.dart';
 
 import 'view/my_home_page.dart';
 
 class MyApp extends StatelessWidget {
   static const HOME = '/';
-  static const CADASTRO = 'Cadastro';
+  static const FORMULARIO_RECEITA = 'Receita-Formulario';
   static const CONFIRMACAO = 'Confirmacao';
+  static const DETALHES_RECEITA = 'Receita-Details';
   // ignore: non_constant_identifier_names
 
   // This widget is the root of your application.
@@ -17,6 +20,7 @@ class MyApp extends StatelessWidget {
     
     return MaterialApp(
       title: 'Receitas',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -35,8 +39,9 @@ class MyApp extends StatelessWidget {
       ),
       routes: {
         HOME:(context) => MyHomePage(),
-        CADASTRO:(context) => Cadastro(),
+        FORMULARIO_RECEITA:(context) => ReceitaForm(),
         CONFIRMACAO:(context) => Confirmacao(),
+        DETALHES_RECEITA:(context) => ReceitaDetails(),
       },
     );
   }

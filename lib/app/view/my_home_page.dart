@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:receita_crud/app/my_app.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key? key}) : super(key: key);
@@ -22,7 +23,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
       body: Center(
 
-        child: TextButton(onPressed: () { Navigator.of(context).pushNamed("Cadastro"); }, child: Text("Cadastrar Receitas"))
+        child: TextButton(onPressed: () =>  Navigator.of(context).pushNamed(MyApp.FORMULARIO_RECEITA) , child: Text("Cadastrar Receitas"))
 
       ),
 
