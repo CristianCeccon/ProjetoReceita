@@ -3,9 +3,24 @@
 import 'package:flutter/material.dart';
 import 'package:receita_crud/app/domain/entities/receitas.dart';
 import 'package:receita_crud/app/view/receita_details_back.dart';
+import 'package:url_launcher/url_launcher.dart';
+
 
 class ReceitaDetails extends StatelessWidget {
   const ReceitaDetails({ Key? key }) : super(key: key);
+
+  launchApp(String url, BuildContext context)async{
+    await canLaunch(url) ? await launch(url) : showDialog(
+
+      context: context,
+      builder: (BuildContext context){
+        return AlertDialog(
+          title: Text('Alerta!'),
+          content: Text('Nao foi possivel encontrar um APP'),
+        );
+      }
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -23,6 +38,8 @@ class ReceitaDetails extends StatelessWidget {
           return Scaffold(
 
             body: ListView(
+
+              padding: EdgeInsets.all(60),
 
               children: [
 
@@ -46,14 +63,30 @@ class ReceitaDetails extends StatelessWidget {
                   child: Text('${receita.nome}', style: TextStyle(fontSize: 30)),
 
                 ),
+                
 
                 Card(
 
-                  child: ListTile(title: Text('Descrissao'), subtitle: Text('${receita.descrissao}')),
+                  child: ListTile(
+                    
+                    title: Text('Descrissao'), 
+                    subtitle: Text('${receita.descrissao}'), 
+                    trailing: Container(width: width/4, child: Row(children: [IconButton(color: Colors.blue,icon: Icon(Icons.food_bank), 
+                    onPressed:(){
+
+                      launchApp('https://pub.dev/packages/url_launcher',context);
+
+                    })],),),
+
+                    
+                  ),
+                  
 
                 )
 
+                
               ]
+              
 
             ),
 
