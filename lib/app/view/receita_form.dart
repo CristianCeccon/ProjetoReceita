@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:receita_crud/app/view/receita_form_back.dart';
 
+import '../my_app.dart';
+
 class ReceitaForm extends StatelessWidget {
   final _form = GlobalKey<FormState>();
   
@@ -79,52 +81,61 @@ class ReceitaForm extends StatelessWidget {
 
         title: Text('Cadastro de receita'),
 
-        actions: [
+      ),
 
-          IconButton(
-            onPressed: (){
+      body: 
 
-              _form.currentState!.validate();
-              _form.currentState!.save();
+      Column(
 
-              if(_back.isValid){
-                _back.save();
-                Navigator.of(context).pop();
-              }
+        children: [
 
-            }, 
+          Padding(
 
-            icon:(Icon(Icons.save))
+            padding: EdgeInsets.all(10),
 
-          )
+            child: Form(
+
+              key: _form,
+
+              child: Column(
+
+                children: [
+
+                  campoName(_back),
+                  campoDescrissao(_back),
+                  campoImage(_back),
+                  
+                ],
+
+              )
+
+            ),
+
+          ),
+
+          SizedBox(
+            height: 50,
+          ),
+          
+
+          TextButton.icon(
+
+            onPressed: () =>  Navigator.of(context).pushNamed(MyApp.CONFIRMACAO),
+             
+
+            icon:(Icon(Icons.save)), 
+            
+            label: Text("Confirmar Cadastro"),
+
+          ),
+
 
         ],
 
-      ),
-
-      body: Padding(
-
-        padding: EdgeInsets.all(10),
-
-        child: Form(
-
-          key: _form,
-
-          child: Column(
-
-            children: [
-
-              campoName(_back),
-              campoDescrissao(_back),
-              campoImage(_back),
-              
-            ],
-
-          )
-
-        ),
-
-      ),
+      )
+      
+      
+      
   
     );
   }

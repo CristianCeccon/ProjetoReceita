@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:receita_crud/app/my_app.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key? key}) : super(key: key);
@@ -21,11 +22,45 @@ class _MyHomePageState extends State<MyHomePage> {
 
       ),
 
-      body: Center(
+      body:
 
-        child: TextButton(onPressed: () =>  Navigator.of(context).pushNamed(MyApp.FORMULARIO_RECEITA) , child: Text("Cadastrar Receitas"))
+      Column(
 
-      ),
+        children: [
+
+          CarouselSlider(
+            options: CarouselOptions(height: 400.0),
+            items: ['../imagem/ImagemComida1.jpg','../imagem/ImagemComida2.png','../imagem/ImagemComida3.jpg','../imagem/ImagemComida4.jpg'].map((i) {
+              return Builder(
+                builder: (BuildContext context) {
+                  return Container(
+                    width: MediaQuery.of(context).size.width,
+                    margin: EdgeInsets.symmetric(horizontal: 5.0),
+                    decoration: BoxDecoration(
+                      color: Colors.transparent
+                    ),
+                    child: Image.asset(i)
+                  );
+                },
+              );
+            }).toList(),
+          ),
+
+          SizedBox(
+            height: 50,
+          ),
+
+          Center(
+
+            child: TextButton(onPressed: () =>  Navigator.of(context).pushNamed(MyApp.FORMULARIO_RECEITA) , child: Text("Cadastrar Receitas"))
+
+          ),
+
+        ],
+
+      ) 
+      
+     
 
       /*floatingActionButton: FloatingActionButton(
 
