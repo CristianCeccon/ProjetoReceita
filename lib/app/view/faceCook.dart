@@ -2,22 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:receita_crud/app/my_app.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key? key}) : super(key: key);
+class FaceCook extends StatefulWidget {
+  FaceCook({Key? key}) : super(key: key);
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MyHomePageState extends State<FaceCook> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-
-          title: Text("FaceCook", style: TextStyle(color: Colors.white, fontWeight: FontWeight.w600, fontFamily: 'Gotham-SSm'),),
-
-        ),
 
         body: Container(
 
@@ -32,29 +27,26 @@ class _MyHomePageState extends State<MyHomePage> {
 
               children: [
 
+                SizedBox(
+                  height: 50,
+                ),
+
                 CarouselSlider(
-
                   options: CarouselOptions(height: 400.0),
-
-                  items: [
-                    '../imagem/ImagemComida1.jpg',
-                    '../imagem/ImagemComida2.png',
-                    '../imagem/ImagemComida3.jpg',
-                    '../imagem/ImagemComida4.jpg'
-                  ].map((i) {
-
+                  items: ['../imagem/LogoFaceCook.png', '../imagem/Home2.png' ].map((i) {
                     return Builder(
                       builder: (BuildContext context) {
                         return Container(
-                            width: MediaQuery.of(context).size.width,
-                            margin: EdgeInsets.symmetric(horizontal: 3.0),
-                            decoration:
-                                BoxDecoration(color: Colors.transparent),
-                            child: Image.asset(i));
+                          width: MediaQuery.of(context).size.width,
+                          margin: EdgeInsets.symmetric(horizontal: 12.0),
+                          decoration: BoxDecoration(
+                            color: Colors.transparent
+                          ),
+                          child: Image.asset(i)
+                        );
                       },
                     );
                   }).toList(),
-
                 ),
 
                 SizedBox(
@@ -77,14 +69,26 @@ class _MyHomePageState extends State<MyHomePage> {
                       child: TextButton(
 
                         onPressed: () => Navigator.of(context)
-                            .pushNamed(MyApp.FORMULARIO_RECEITA),
+                            .pushNamed(MyApp.HOME2),
                         child: Text("Cadastrar Receitas", style: TextStyle(color: Colors.white))
 
                       )
                   ),
-
                   //child: TextButton(onPressed: () =>  Navigator.of(context).pushNamed(MyApp.CONFIRMACAO) , child: Text("Cadastrar Receitas"))
                 ),
+
+                SizedBox(
+                  height: 20,
+                ),
+
+                Container(
+
+                  padding: EdgeInsets.only(right: 10, left: 10),
+
+                  decoration: BoxDecoration(color: Colors.amber.shade800 ,borderRadius: BorderRadius.all(Radius.circular(4))),
+
+                  child: TextButton(onPressed: () =>  Navigator.of(context).pushNamed(MyApp.CATEGORIA_RECEITA) , child: Text("Categoria Receitas", style: TextStyle(color: Colors.white))),
+                )
               ],
             ))
 
@@ -98,6 +102,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
       ),*/
 
-        );
+    );
   }
 }

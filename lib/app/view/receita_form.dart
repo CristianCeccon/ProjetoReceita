@@ -116,6 +116,32 @@ class ReceitaForm extends StatelessWidget {
           SizedBox(
             height: 50,
           ),
+
+
+          Center(
+
+            child: Container(
+
+              padding: EdgeInsets.only(right: 10, left: 10),
+
+              decoration: BoxDecoration(
+
+                color: Colors.amber,
+                borderRadius: BorderRadius.all(Radius.circular(4))
+
+              ),
+
+              child: TextButton(
+
+                onPressed: () => Navigator.of(context)
+                  .pushNamed(MyApp.FORMULARIO_RECEITA),
+                child: Text("Cadastrar Receitas", style: TextStyle(color: Colors.white))
+
+              )
+            ),      
+          ),
+
+          
           
 
           TextButton.icon(
@@ -126,6 +152,7 @@ class ReceitaForm extends StatelessWidget {
             icon:(Icon(Icons.save)), 
             
             label: Text("Confirmar Cadastro"),
+            
 
           ),
 
