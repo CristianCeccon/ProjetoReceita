@@ -15,7 +15,12 @@ class ReceitaDAOFirestore implements ReceitaDAO{
       (doc) => Receita(
         id:doc.reference.id.toString(),
         nome: doc['nome'],
-        descricao: doc['descricao'],    
+        descricao: doc['descricao'],
+        urlImagem: doc['urlImagem'],
+        qtn: doc['qtn'],
+        modoPreparo: doc['modoPreparo'],
+        ingrediente: doc['ingrediente']
+        //suporte: doc['suporte'],  
     )
     ).toList();
   }
@@ -32,6 +37,11 @@ class ReceitaDAOFirestore implements ReceitaDAO{
       {
         'nome':receitas.nome,
         'descricao':receitas.descricao,
+        'urlImagem':receitas.urlImagem,
+        'ingrediente': receitas.ingrediente,
+        'suporte' : receitas.suporte,
+        'qtn': receitas.qtn,
+        'modoPreparo':receitas.modoPreparo
       }
     );
   }

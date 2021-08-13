@@ -1,5 +1,4 @@
 
-
 import 'package:flutter/material.dart';
 import 'package:receita_crud/app/domain/entities/receitas.dart';
 import 'package:receita_crud/app/view/receita_details_back.dart';
@@ -38,6 +37,7 @@ class ReceitaDetails extends StatelessWidget {
           return Scaffold(
 
             body: ListView(
+              
 
               padding: EdgeInsets.all(60),
 
@@ -69,7 +69,7 @@ class ReceitaDetails extends StatelessWidget {
 
                   child: ListTile(
                     
-                    title: Text('Descrissao'), 
+                    title: Text('Descrição'), 
                     subtitle: Text('${receita.descricao}'), 
                     trailing: Container(width: width/4, child: Row(children: [IconButton(color: Colors.blue,icon: Icon(Icons.food_bank), 
                     onPressed:(){
@@ -80,6 +80,67 @@ class ReceitaDetails extends StatelessWidget {
 
                     
                   ),
+                  
+
+                ),
+
+                Card(
+
+                  child: ListTile(
+                    
+                    title: Text('Quantidade de Porções'), 
+                    subtitle: Text('${receita.qtn}'), 
+                    trailing: Container(width: width/4, child: Row(children: [IconButton(color: Colors.blue,icon: Icon(Icons.food_bank), 
+                    onPressed:(){
+
+                      launchApp('https://pub.dev/packages/url_launcher',context);
+
+                    })],),),
+
+                    
+                  ),
+
+                  
+                  
+
+                ),
+
+                Card(
+
+                  child: ListTile(
+                    
+                    title: Text('Ingredientes'), 
+                    subtitle: Text('${receita.ingrediente}'), 
+                    trailing: Container(width: width/4, child: Row(children: [IconButton(color: Colors.blue,icon: Icon(Icons.food_bank), 
+                    onPressed:(){
+
+                      launchApp('https://pub.dev/packages/url_launcher',context);
+
+                    })],),),
+
+                    
+                  ),
+                  
+
+                ),
+
+                Card(
+
+                  child: ListTile(
+                    
+                    title: Text('Modo de Preparo'), 
+                    subtitle: Text('${receita.modoPreparo}'), 
+                    trailing: Container(width: width/4, child: Row(children: [IconButton(color: Colors.blue,icon: Icon(Icons.food_bank), 
+                    onPressed:(){
+
+                      launchApp('https://pub.dev/packages/url_launcher',context);
+
+                    })],),),
+
+                    
+                  ),
+
+                  
                   
 
                 )

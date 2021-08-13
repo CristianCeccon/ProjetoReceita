@@ -3,9 +3,12 @@ class Receita{
   String? nome;
   String? descricao;
   String? urlImagem;
-  String? email;
+  String? suporte;
+  String? qtn;
+  String? modoPreparo;
+  String? ingrediente;
 
-  Receita({ this.id,  this.nome,  this.descricao,  this.urlImagem, this.email});
+  Receita({ this.id,  this.nome,  this.descricao,  this.urlImagem, this.suporte, this.qtn, this.modoPreparo, this.ingrediente});
 }
 
 

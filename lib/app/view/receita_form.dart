@@ -25,20 +25,20 @@ class ReceitaForm extends StatelessWidget {
 
   }
 
-  // Widget campoPorcao(ReceitaFormBack back){
+  Widget campoPorcao(ReceitaFormBack back){
 
-  //   return TextFormField(
+    return TextFormField(
 
-  //     keyboardType: TextInputType.number,
+      keyboardType: TextInputType.number,
 
-  //     decoration: InputDecoration(
-  //       labelText: 'Porção',
-  //       hintText: '3'
-  //     )
+      decoration: InputDecoration(
+        labelText: 'Porção',
+        hintText: '3'
+      )
 
-  //   );
+    );
 
-  // }
+  }
 
   Widget campoDescricao(ReceitaFormBack back){
 
@@ -57,19 +57,69 @@ class ReceitaForm extends StatelessWidget {
 
   }
 
-  // Widget campoImage(ReceitaFormBack back){
+  Widget campoImage(ReceitaFormBack back){
 
-  //   return TextFormField(
+    return TextFormField(
 
-  //     decoration: InputDecoration(
-  //       labelText: 'Endereço imagem',
-  //       hintText: 'https//www.imagem.com'
-  //     )
+      onSaved: (newValue) => back.receita?.urlImagem = newValue,
+      initialValue: back.receita?.urlImagem ?? '',
 
-  //   );
+      decoration: InputDecoration(
+        labelText: 'Endereço imagem',
+        hintText: 'https//www.imagem.com'
+      )
 
-  // }
+    );
 
+  }
+  Widget campoIngrediente(ReceitaFormBack back){
+
+    return TextFormField(
+
+      onSaved: (newValue) => back.receita?.ingrediente = newValue,
+      initialValue: back.receita?.ingrediente ?? '',
+
+      decoration: InputDecoration(
+        labelText: 'Ingredientes',
+        hintText: '500g de molho de tomate'
+      )
+
+    );
+
+  }
+  Widget campoModoPreparo(ReceitaFormBack back){
+
+    return TextFormField(
+
+      onSaved: (newValue) => back.receita?.modoPreparo= newValue,
+      initialValue: back.receita?.modoPreparo ?? '',
+
+      decoration: InputDecoration(
+        labelText: 'Modo de preparar a receita',
+        hintText: '''
+        1. Coloque o macarrão de molho
+        2. pegue o molho de tomate e coloque por cima do macarrão'''
+      )
+
+    );
+
+  }
+  
+  Widget campoQtn(ReceitaFormBack back){
+
+    return TextFormField(
+
+      onSaved: (newValue) => back.receita?.qtn = newValue,
+      initialValue: back.receita?.qtn ?? '',
+
+      decoration: InputDecoration(
+        labelText: 'Quantidade de porções que a receita rende',
+        hintText: '10 porções'
+      )
+
+    );
+
+  }
   @override
   Widget build(BuildContext context) {
 
@@ -103,7 +153,10 @@ class ReceitaForm extends StatelessWidget {
 
                   campoName(_back),
                   campoDescricao(_back),
-                  //campoImage(_back),
+                  campoImage(_back),
+                  campoIngrediente(_back),
+                  campoModoPreparo(_back),
+                  campoQtn(_back),
                   
                 ],
 

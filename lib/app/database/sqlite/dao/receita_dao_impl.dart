@@ -1,5 +1,6 @@
 
 import 'package:receita_crud/app/database/sqlite/connection.dart';
+import 'package:receita_crud/app/domain/entities/ingrediente.dart';
 import 'package:receita_crud/app/domain/entities/receitas.dart';
 import 'package:receita_crud/app/domain/interfaces/receita_dao.dart';
 import 'package:sqflite/sqflite.dart';
@@ -19,7 +20,10 @@ class ReceitaDAOImpl implements ReceitaDAO{
         nome: linha['nome'], 
         descricao: linha['descricao'],
         urlImagem: linha['urlImagem'],
-        email: linha['email'],
+        qtn: linha['qtn'],
+        modoPreparo: linha['modoPreparo'],
+        suporte: linha['suporte'],
+        ingrediente: linha['ingrediente']
 
       );
 

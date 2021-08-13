@@ -68,6 +68,14 @@ class _ListaState extends State<Lista> {
         actions: [
           IconButton(
               color: Colors.white,
+              icon: Icon(Icons.door_back),
+              onPressed: () => Navigator.of(context)
+                .pushNamed(MyApp.HOME),
+
+          ),
+
+          IconButton(
+              color: Colors.white,
               icon: Icon(Icons.add),
               onPressed: () {
                 _back.goToForm(context);
