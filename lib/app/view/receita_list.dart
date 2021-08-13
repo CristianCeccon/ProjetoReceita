@@ -74,12 +74,12 @@ class ReceitaList extends StatelessWidget {
                     itemBuilder: (context, i) {
                       var receita = lista[i];
                       return ListTile(
-                        leading: circleAvatar(receita.urlImagem!),
+                        leading: circleAvatar(receita.urlImagem ?? 'https://yt3.ggpht.com/ytc/AKedOLT_0KTDhZEuw3jfp_7Y2RPy_zG7sp5ly3RdlYTk=s900-c-k-c0x00ffffff-no-rj'),
                         title: Text(receita.nome!),
                         onTap: (){
                           _back.goToDetails(context, receita);
                         },
-                        subtitle: Text(receita.descrissao!),
+                        subtitle: Text(receita.descricao!),
                         trailing: Container(
                           width: 100,
                           child: Row(

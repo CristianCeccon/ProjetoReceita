@@ -16,7 +16,7 @@ class ReceitaDetails extends StatelessWidget {
       builder: (BuildContext context){
         return AlertDialog(
           title: Text('Alerta!'),
-          content: Text('Nao foi possivel encontrar um APP'),
+          content: Text('Nao foi possível encontrar um APP'),
         );
       }
     );
@@ -70,7 +70,7 @@ class ReceitaDetails extends StatelessWidget {
                   child: ListTile(
                     
                     title: Text('Descrissao'), 
-                    subtitle: Text('${receita.descrissao}'), 
+                    subtitle: Text('${receita.descricao}'), 
                     trailing: Container(width: width/4, child: Row(children: [IconButton(color: Colors.blue,icon: Icon(Icons.food_bank), 
                     onPressed:(){
 

@@ -18,7 +18,7 @@ class _MyHomePageState extends State<FaceCook> {
 
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("../imagem/background.jpg"),
+                image: AssetImage("imagem/background.jpg"),
                 fit: BoxFit.cover,
               ),
             ),
@@ -33,7 +33,7 @@ class _MyHomePageState extends State<FaceCook> {
 
                 CarouselSlider(
                   options: CarouselOptions(height: 400.0),
-                  items: ['../imagem/LogoFaceCook.png', '../imagem/Home2.png' ].map((i) {
+                  items: ['imagem/LogoFaceCook.png', 'imagem/Home2.png' ].map((i) {
                     return Builder(
                       builder: (BuildContext context) {
                         return Container(
@@ -50,7 +50,7 @@ class _MyHomePageState extends State<FaceCook> {
                 ),
 
                 SizedBox(
-                  height: 50,
+                  height: 20,
                 ),
 
                 Center(
@@ -69,7 +69,7 @@ class _MyHomePageState extends State<FaceCook> {
                       child: TextButton(
 
                         onPressed: () => Navigator.of(context)
-                            .pushNamed(MyApp.HOME2),
+                            .pushNamed(MyApp.LISTA),
                         child: Text("Cadastrar Receitas", style: TextStyle(color: Colors.white))
 
                       )
@@ -77,18 +77,7 @@ class _MyHomePageState extends State<FaceCook> {
                   //child: TextButton(onPressed: () =>  Navigator.of(context).pushNamed(MyApp.CONFIRMACAO) , child: Text("Cadastrar Receitas"))
                 ),
 
-                SizedBox(
-                  height: 20,
-                ),
-
-                Container(
-
-                  padding: EdgeInsets.only(right: 10, left: 10),
-
-                  decoration: BoxDecoration(color: Colors.amber.shade800 ,borderRadius: BorderRadius.all(Radius.circular(4))),
-
-                  child: TextButton(onPressed: () =>  Navigator.of(context).pushNamed(MyApp.CATEGORIA_RECEITA) , child: Text("Categoria Receitas", style: TextStyle(color: Colors.white))),
-                )
+                
               ],
             ))
 

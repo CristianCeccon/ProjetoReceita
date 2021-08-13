@@ -13,7 +13,7 @@ class ReceitaService{
 
     //validacao
     validateName(receitas.nome!);
-    validadeDescrissao(receitas.descrissao!);
+    validadeDescricao(receitas.descricao!);
 
     _dao.save(receitas);
   }
@@ -34,7 +34,7 @@ class ReceitaService{
 
     if(name == null){
 
-      throw new DomainLayerException("O nome e obrigatorio");
+      throw new DomainLayerException("O nome e obrigatório");
     }
     else if(name.length< min){
 
@@ -42,25 +42,25 @@ class ReceitaService{
     }
     else if(name.length > max){
 
-      throw new DomainLayerException("O nome da receita deve possuir no maximo $max caracteres");
+      throw new DomainLayerException("O nome da receita deve possuir no máximo $max caracteres");
     }
   }
 
-  validadeDescrissao(String descrissao){
+  validadeDescricao(String descricao){
     var min = 15;
     var max = 600;
 
-    if(descrissao == null){
+    if(descricao == null){
 
-      throw new DomainLayerException("A descrissao e obrigatoria");
+      throw new DomainLayerException("A descrição e obrigatória");
     }
-    else if(descrissao.length< min){
+    else if(descricao.length< min){
 
-      throw new DomainLayerException("A descrissao da receita deve ter pelo menos $min caracteres");
+      throw new DomainLayerException("A descrição da receita deve ter pelo menos $min caracteres");
     }
-    else if(descrissao.length > max){
+    else if(descricao.length > max){
 
-      throw new DomainLayerException("A descrissao da receita deve possuir no maximo $max caracteres");
+      throw new DomainLayerException("A descricao da receita deve possuir no máximo $max caracteres");
     }
 
   }

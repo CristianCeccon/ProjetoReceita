@@ -30,8 +30,6 @@ class ReceitaFormBack{
     }
   }
 
-
-
   //salvar
   save() async{
     await _service.save(receita!);
@@ -41,7 +39,7 @@ class ReceitaFormBack{
   //validacoes
   String? validadeNome(String? name){
     try{
-      _service.validateName((name!));
+      _service.validateName(name!);
       _nomeIsValid = true;
 
       return null;
@@ -54,9 +52,9 @@ class ReceitaFormBack{
 
   }
 
-  String? validadeDescrissao(String? descrissao){
+  String? validadeDescricao(String? descricao){
     try{
-      _service.validadeDescrissao((descrissao!));
+      _service.validadeDescricao(descricao!);
       _descricaoIsValid = true;
 
       return null;

@@ -17,7 +17,7 @@ class ReceitaDAOImpl implements ReceitaDAO{
 
         id: linha['id_receita'], 
         nome: linha['nome'], 
-        descrissao: linha['descrissao'],
+        descricao: linha['descricao'],
         urlImagem: linha['urlImagem'],
         email: linha['email'],
 
@@ -44,12 +44,12 @@ class ReceitaDAOImpl implements ReceitaDAO{
     var sql;
 
     if(receita.id == null){
-      sql = 'INSERT INTO receita (nome, descrissao) VALUES(?,?)';
-      _db!.rawInsert(sql,[receita.nome, receita.descrissao]);
+      sql = 'INSERT INTO receita (nome, descricao) VALUES(?,?)';
+      _db!.rawInsert(sql,[receita.nome, receita.descricao]);
     }
     else{
-      sql = 'UPDATE receita SET nome=?, descrissao=? WHERE id=?';
-      _db!.rawUpdate(sql,[receita.nome, receita.descrissao, receita.id]);
+      sql = 'UPDATE receita SET nome=?, descricao=? WHERE id=?';
+      _db!.rawUpdate(sql,[receita.nome, receita.descricao, receita.id]);
     }
     
   }

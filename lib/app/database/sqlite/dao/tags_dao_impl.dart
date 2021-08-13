@@ -41,6 +41,7 @@ class TagsDAOImpl implements TagsDAO{
 
     var sql;
 
+    // ignore: unnecessary_null_comparison
     if(tags.id == null){
       sql = 'INSERT INTO tags(nome) VALUES(?)';
       _db!.rawInsert(sql,[tags.nome]);

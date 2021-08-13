@@ -18,7 +18,7 @@ abstract class _ReceitaListBack with Store{
 
   //atualizar lista de receita
   @observable
-  late Future<List<Receita>>list;
+  Future<List<Receita>>? list;
 
   @action
   refreshList([dynamic value]){
@@ -34,8 +34,12 @@ abstract class _ReceitaListBack with Store{
   }
 
   //metodo para chamar o form
-  goToForm(BuildContext context, Receita receita){
-    Navigator.of(context).pushNamed(MyApp.FORMULARIO_RECEITA);
+  goToForm(BuildContext context, [Receita? receita]){
+    Navigator.of(context)
+      .pushNamed(
+        MyApp.FORMULARIO_RECEITA,
+        arguments: receita,
+      );
   }
 
   goToDetails(BuildContext context, Receita receita){

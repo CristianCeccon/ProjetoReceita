@@ -44,6 +44,7 @@ class IngredienteDAOImpl implements IngredienteDAO{
     var sql;
 
     if(ingrediente.id == null){
+      // arrumar quantidade
       sql = 'INSERT INTO ingrediente(nome, descrissao) VALUES(?,?,?)';
       _db!.rawInsert(sql,[ingrediente.nome, ingrediente.quantidade, ingrediente.medida]);
     }

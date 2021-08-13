@@ -5,51 +5,51 @@ import '../my_app.dart';
 
 class ReceitaForm extends StatelessWidget {
   final _form = GlobalKey<FormState>();
-  
+
   Widget campoName(ReceitaFormBack back){
 
     return TextFormField(
 
       validator: back.validadeNome,
 
-      onSaved: (newValue) => back.receita!.nome = newValue,
+      onSaved: (newValue) => back.receita?.nome = newValue,
 
       initialValue: back.receita?.nome,
 
       decoration: InputDecoration(
         labelText: 'Nome',
-        hintText: 'Macarrao Stuliate'
+        hintText: 'Macarrão Stuliate'
       )
 
     );
 
   }
 
-  Widget campoPorcao(ReceitaFormBack back){
+  // Widget campoPorcao(ReceitaFormBack back){
+
+  //   return TextFormField(
+
+  //     keyboardType: TextInputType.number,
+
+  //     decoration: InputDecoration(
+  //       labelText: 'Porção',
+  //       hintText: '3'
+  //     )
+
+  //   );
+
+  // }
+
+  Widget campoDescricao(ReceitaFormBack back){
 
     return TextFormField(
 
-      keyboardType: TextInputType.number,
+      validator: back.validadeDescricao,
+      onSaved: (newValue) => back.receita?.descricao = newValue,
+      initialValue: back.receita?.descricao,
 
       decoration: InputDecoration(
-        labelText: 'Porção',
-        hintText: '3'
-      )
-
-    );
-
-  }
-
-  Widget campoDescrissao(ReceitaFormBack back){
-
-    return TextFormField(
-
-      validator: back.validadeDescrissao,
-      onSaved: (newValue) => back.receita!.descrissao = newValue,
-      initialValue: back.receita?.descrissao,
-
-      decoration: InputDecoration(
-        labelText: 'Descrissao',
+        labelText: 'Descrição',
         hintText: 'uma receita simples, barata e gostosa direto da Italia'
       )
 
@@ -57,18 +57,18 @@ class ReceitaForm extends StatelessWidget {
 
   }
 
-  Widget campoImage(ReceitaFormBack back){
+  // Widget campoImage(ReceitaFormBack back){
 
-    return TextFormField(
+  //   return TextFormField(
 
-      decoration: InputDecoration(
-        labelText: 'Endereco imagem',
-        hintText: 'https//www.imagem.com'
-      )
+  //     decoration: InputDecoration(
+  //       labelText: 'Endereço imagem',
+  //       hintText: 'https//www.imagem.com'
+  //     )
 
-    );
+  //   );
 
-  }
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -102,8 +102,8 @@ class ReceitaForm extends StatelessWidget {
                 children: [
 
                   campoName(_back),
-                  campoDescrissao(_back),
-                  campoImage(_back),
+                  campoDescricao(_back),
+                  //campoImage(_back),
                   
                 ],
 
@@ -126,25 +126,37 @@ class ReceitaForm extends StatelessWidget {
 
               decoration: BoxDecoration(
 
-                color: Colors.amber,
+                color: Colors.amber.shade800,
                 borderRadius: BorderRadius.all(Radius.circular(4))
 
               ),
 
               child: TextButton(
 
-                onPressed: () => Navigator.of(context)
-                  .pushNamed(MyApp.FORMULARIO_RECEITA),
-                child: Text("Cadastrar Receitas", style: TextStyle(color: Colors.white))
+                onPressed: () {
+                  _form.currentState?.validate();
+                  _form.currentState?.save();
+
+
+                  if(_back.isValid){
+
+                    _back.save();
+                    Navigator.of(context)
+                      .pushNamed(MyApp.LISTA_RECEITA);
+
+                  }
+                  
+                },
+                child: Text(
+                  "Cadastrar Receitas",
+                  style: TextStyle(color: Colors.white)
+                )
 
               )
             ),      
           ),
 
-          
-          
-
-          TextButton.icon(
+          /*TextButton.icon(
 
             onPressed: () =>  Navigator.of(context).pushNamed(MyApp.CONFIRMACAO),
              
@@ -154,7 +166,7 @@ class ReceitaForm extends StatelessWidget {
             label: Text("Confirmar Cadastro"),
             
 
-          ),
+          ),*/
 
 
         ],

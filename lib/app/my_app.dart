@@ -1,20 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:receita_crud/app/view/cadastro.dart';
 import 'package:receita_crud/app/view/categoria.dart';
 import 'package:receita_crud/app/view/confirmacao.dart';
 import 'package:receita_crud/app/view/faceCook.dart';
+import 'package:receita_crud/app/view/lista.dart';
 import 'package:receita_crud/app/view/receita_details.dart';
 import 'package:receita_crud/app/view/receita_form.dart';
+import 'package:receita_crud/app/view/receita_list.dart';
 
-import 'view/my_home_page.dart';
+
 
 class MyApp extends StatelessWidget {
   static const HOME = '/';
-  static const HOME2 = 'Tela-inicio';
+  static const LISTA = 'Tela-inicio';
   static const FORMULARIO_RECEITA = 'Receita-Formulario';
   static const DETALHES_RECEITA = 'Receita-Details';
   static const CATEGORIA_RECEITA = 'Categoria-receita';
   static const CONFIRMACAO = 'Confirmacao';
+  static const LISTA_RECEITA = 'Lista-Receita';
   // ignore: non_constant_identifier_names
 
   // This widget is the root of your application.
@@ -43,11 +45,12 @@ class MyApp extends StatelessWidget {
       ),
       routes: {
         HOME:(context) => FaceCook(),
-        HOME2:(context) => MyHomePage(),
+        LISTA:(context) => Lista(),
         FORMULARIO_RECEITA:(context) => ReceitaForm(),
         CONFIRMACAO:(context) => Confirmacao(),
         DETALHES_RECEITA:(context) => ReceitaDetails(),
         CATEGORIA_RECEITA:(context) => Categoria(),
+        LISTA_RECEITA:(context) => ReceitaList(),
       },
     );
   }

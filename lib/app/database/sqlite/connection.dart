@@ -20,9 +20,9 @@ class Connection{
         version: 1,
         onCreate: (db, v){
           db.execute(createTable);
-          db.execute(insertUsuario);
           db.execute(insertReceita);
-          db.execute(insertIngrediente);
+          // db.execute(insertUsuario);
+          // db.execute(insertIngrediente);
         },
       );
 
