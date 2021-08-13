@@ -29,7 +29,7 @@ class ReceitaDAOImpl implements ReceitaDAO{
   }
 
   @override
-  remove(int id) async{
+  remove(dynamic id) async{
     Database? _db = await Connection.get();
 
     var sql= 'DELETE FROM receita WHERE id =?';

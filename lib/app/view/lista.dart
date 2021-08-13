@@ -47,7 +47,7 @@ class _ListaState extends State<Lista> {
                       // ignore: deprecated_member_use
                       FlatButton(
                         child: Text('Sim'),
-                        onPressed: remove,
+                        onPressed: () => remove!(),
                       ),
                     ],
                   ));
@@ -67,6 +67,7 @@ class _ListaState extends State<Lista> {
         ),
         actions: [
           IconButton(
+              color: Colors.white,
               icon: Icon(Icons.add),
               onPressed: () {
                 _back.goToForm(context);

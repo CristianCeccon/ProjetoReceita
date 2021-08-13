@@ -1,5 +1,5 @@
 class Receita{
-  int? id;
+  dynamic id;
   String? nome;
   String? descricao;
   String? urlImagem;

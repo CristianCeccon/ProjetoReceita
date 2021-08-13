@@ -14,7 +14,7 @@ class ReceitaForm extends StatelessWidget {
 
       onSaved: (newValue) => back.receita?.nome = newValue,
 
-      initialValue: back.receita?.nome,
+      initialValue: back.receita?.nome ?? '',
 
       decoration: InputDecoration(
         labelText: 'Nome',
@@ -46,7 +46,7 @@ class ReceitaForm extends StatelessWidget {
 
       validator: back.validadeDescricao,
       onSaved: (newValue) => back.receita?.descricao = newValue,
-      initialValue: back.receita?.descricao,
+      initialValue: back.receita?.descricao ?? '',
 
       decoration: InputDecoration(
         labelText: 'Descrição',
@@ -142,13 +142,13 @@ class ReceitaForm extends StatelessWidget {
 
                     _back.save();
                     Navigator.of(context)
-                      .pushNamed(MyApp.LISTA_RECEITA);
+                      .pushNamed(MyApp.LISTA);
 
                   }
                   
                 },
                 child: Text(
-                  "Cadastrar Receitas",
+                  "Cadastrar Receita",
                   style: TextStyle(color: Colors.white)
                 )
 

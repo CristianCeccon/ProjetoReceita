@@ -5,7 +5,7 @@ abstract class ReceitaDAO{
 
   save(Receita receitas);
 
-  remove(int id);
+  remove(dynamic id);
 
   Future<List<Receita>>find();
 }

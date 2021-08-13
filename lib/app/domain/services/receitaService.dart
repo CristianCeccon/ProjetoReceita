@@ -11,14 +11,14 @@ class ReceitaService{
 
   save(Receita receitas){
 
-    //validacao
+    //validação
     validateName(receitas.nome!);
     validadeDescricao(receitas.descricao!);
 
     _dao.save(receitas);
   }
 
-  remove(int id){
+  remove(dynamic id){
 
     _dao.remove(id);
   }

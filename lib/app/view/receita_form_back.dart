@@ -28,10 +28,15 @@ class ReceitaFormBack{
       receita = parameter as Receita;
       
     }
+    else{
+      receita = Receita();
+    }
   }
 
   //salvar
   save() async{
+    print(receita?.id);
+    print(receita?.nome);
     await _service.save(receita!);
   }
 

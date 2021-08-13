@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "885074382512",
+    "project_id": "receita-ad76d",
+    "storage_bucket": "receita-ad76d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:885074382512:android:963a6eb1ad0f6736697575",
+        "android_client_info": {
+          "package_name": "com.example.receita_crud"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "885074382512-l0nfc6aves6lj7eobcv8ocgp4hpa076r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDg4lNPums67h_4GUTQPP3swrvEsGwoVxg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "885074382512-l0nfc6aves6lj7eobcv8ocgp4hpa076r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

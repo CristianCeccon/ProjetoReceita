@@ -33,7 +33,7 @@ abstract class _ReceitaListBack with Store{
 
   }
 
-  //metodo para chamar o form
+  //método para chamar o form
   goToForm(BuildContext context, [Receita? receita]){
     Navigator.of(context)
       .pushNamed(
@@ -52,7 +52,7 @@ abstract class _ReceitaListBack with Store{
 
 
   //excluir
-  remove(int id){
+  remove(dynamic id){
     _service.remove(id);
     refreshList();
   }

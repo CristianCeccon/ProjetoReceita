@@ -35,6 +35,8 @@ dependencies:
   flutter_mobx: 
 
   path:
+  cloud_firestore:
+  firebase_core:
 
   
 
