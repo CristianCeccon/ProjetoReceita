@@ -37,6 +37,7 @@ dependencies:
   path:
   cloud_firestore:
   firebase_core:
+  http:
 
   
 

@@ -88,8 +88,7 @@ class ReceitaList extends StatelessWidget {
                                 _back.goToForm(context, receita);
                               }),
                               iconRemoveButton(context, (){
-                                _back.remove(receita.id!);
-                                Navigator.of(context).pop();
+                                _back.remove(receita.id, context);
                               })
                             ],
                           ),

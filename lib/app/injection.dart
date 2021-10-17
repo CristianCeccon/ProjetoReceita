@@ -1,8 +1,9 @@
 
-import 'package:firebase_core/firebase_core.dart';
+//import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get_it/get_it.dart';
-import 'package:receita_crud/app/database/firestore/receita_dao_firestore.dart';
+import 'package:receita_crud/app/database/mysql/receita_dao_mysql.dart';
+//import 'package:receita_crud/app/database/firestore/receita_dao_firestore.dart';
 import 'package:receita_crud/app/database/sqlite/dao/ingrediente_dao_impl.dart';
 import 'package:receita_crud/app/database/sqlite/dao/receita_dao_impl.dart';
 import 'package:receita_crud/app/database/sqlite/dao/tags_dao_impl.dart';
@@ -18,13 +19,14 @@ setupinjection() async {
   GetIt getIt = GetIt.I;
 
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  //await Firebase.initializeApp();
 
   // dao para o banco Local
   //getIt.registerSingleton<ReceitaDAO>(ReceitaDAOImpl());
 
   // get para dao para o banco FireStore
-  getIt.registerSingleton<ReceitaDAO>(ReceitaDAOFirestore());
+  //getIt.registerSingleton<ReceitaDAO>(ReceitaDAOFirestore());
+  getIt.registerSingleton<ReceitaDAO>(ReceitaDAOMySQL());
 
   getIt.registerSingleton<ReceitaService>(ReceitaService());
 

@@ -9,18 +9,18 @@ class ReceitaService{
 
   var _dao = GetIt.I.get<ReceitaDAO>();
 
-  save(Receita receitas){
+  save(Receita receitas) async {
 
     //validação
     validateName(receitas.nome!);
     validadeDescricao(receitas.descricao!);
 
-    _dao.save(receitas);
+    await _dao.save(receitas);
   }
 
-  remove(dynamic id){
+  remove(dynamic id) async {
 
-    _dao.remove(id);
+    await _dao.remove(id);
   }
 
   Future<List<Receita>>find(){

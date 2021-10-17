@@ -52,9 +52,10 @@ abstract class _ReceitaListBack with Store{
 
 
   //excluir
-  remove(dynamic id){
-    _service.remove(id);
+  remove(dynamic id, BuildContext context) async {
+    await _service.remove(id);
     refreshList();
+    Navigator.of(context).pop();
   }
 
 }

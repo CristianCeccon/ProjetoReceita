@@ -1,12 +1,19 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_core/firebase_core.dart';
+//import 'package:cloud_firestore/cloud_firestore.dart';
+//import 'package:firebase_core/firebase_core.dart';
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:path/path.dart';
+import 'package:receita_crud/app/domain/entities/receitas.dart';
 import 'package:receita_crud/app/injection.dart';
 import 'package:receita_crud/app/view/cadastro.dart';
+import 'package:http/http.dart' as http;
+
 
 import 'app/my_app.dart';
 
 void main() async{
+
   setupinjection();
   runApp(MyApp());
 
@@ -44,4 +51,10 @@ void main() async{
     .catchError((error)=>print('deu errado $error'));*/
     
 }
+
+
+
+
+
+
 
